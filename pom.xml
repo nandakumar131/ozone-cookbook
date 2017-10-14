@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.hadoop.ozone.cookbook</groupId>
+	<artifactId>ozone-cookbook</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  <name>Apache Hadoop Ozone Cookbook</name>
+  <description>A cookbook for Apache hadoop ozone</description>
+  <packaging>pom</packaging>
+	<properties>
+		<hdfs.version>3.1.0-SNAPSHOT</hdfs.version>
+		<junit.version>4.11</junit.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	<dependencyManagement>
+    <dependencies>
+		  <dependency>
+			  <groupId>org.apache.hadoop</groupId>
+			  <artifactId>hadoop-common</artifactId>
+			  <version>${hdfs.version}</version>
+		  </dependency>
+		  <dependency>
+			  <groupId>org.apache.hadoop</groupId>
+			  <artifactId>hadoop-hdfs-client</artifactId>
+			  <version>${hdfs.version}</version>
+		  </dependency>
+		  <dependency>
+			  <groupId>junit</groupId>
+			  <artifactId>junit</artifactId>
+			  <version>${junit.version}</version>
+		  </dependency>
+    </dependencies>
+	</dependencyManagement>
+
+  <modules>
+    <module>client</module>
+  </modules>
+	
+	 <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <!-- or whatever version you use -->
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
